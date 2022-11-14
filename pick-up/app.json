@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "pick-up",
+    "slug": "pick-up",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

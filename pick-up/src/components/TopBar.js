@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height: 60,
     flexDirection: 'row',
-    backgroundColor: '#05C46B',
+    backgroundColor: '#bdc3c7',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -28,3 +28,4 @@ const styles = StyleSheet.create({
 });
 
 export default TopBar;
+

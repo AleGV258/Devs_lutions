@@ -5,7 +5,7 @@ import Navbar from './src/components/Navbar';
 export default function App() {
   return (
     <SafeAreaView style={styles.area}>
-      <StatusBar barStyle="light-content" backgroundColor="#27ae60"/>
+      <StatusBar barStyle="light-content" backgroundColor="#5E3B3B"/>
       <View style={styles.container}>
         <Navbar/>
       </View>

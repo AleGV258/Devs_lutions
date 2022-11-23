@@ -4,7 +4,7 @@ import { StyleSheet, Text, ScrollView } from 'react-native';
 export default function Pagina2({ navigation }) {
     return (
         <ScrollView style={styles.scroller} >
-          <Text>Pagina 2</Text>
+          <Text>Perfil</Text>
         </ScrollView>
     );
 }

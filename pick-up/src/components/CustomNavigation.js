@@ -2,8 +2,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import HomeScreen from './HomePage'
-import Pagina1 from './pagina1'
-import Pagina2 from './pagina2'
+import MapPage from './MapPage'
+import ProfilePage from './ProfilePage'
 
 const Stack = createStackNavigator()
 
@@ -17,7 +17,7 @@ const HomeScreenNavigation = () => {
             />
             <Stack.Screen 
                 name="EmergencyScreen"
-                component={Pagina1}
+                component={MapPage}
                 options={({ route }) => ({ title: ("     " + route.params.nombre), headerStyle: { backgroundColor: '#05C46B',}, headerTintColor: '#fff', headerTitleAlign: "center", headerTitleStyle: {fontSize: 18}})}
             />
         </Stack.Navigator>
@@ -25,3 +25,5 @@ const HomeScreenNavigation = () => {
 }
 
 export { HomeScreenNavigation }
+
+

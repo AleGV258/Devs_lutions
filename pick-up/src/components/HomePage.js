@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, Text, ScrollView } from 'react-native';
-//import EmergencyCard from './EmergencyCard';
+import Buscador from './Buscador';
 
 export default function HomeScreen({ navigation }) {
     return (
         <ScrollView style={styles.scroller} >
-          {/* <EmergencyCard></EmergencyCard> */}
-          <Text>Home</Text>
+          <Buscador></Buscador>
+          <Text>Aqui van las card dinamicas de los alimentos ↓</Text>
         </ScrollView>
     );
 }
@@ -14,5 +14,6 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   scroller: {
     flex: 1,
+    backgroundColor: '#fff',
   }
 });

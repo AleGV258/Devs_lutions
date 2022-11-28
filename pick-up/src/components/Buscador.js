@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Text, View, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-import { Card, Icon } from 'react-native-elements';
+import { View, StyleSheet, TextInput } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 const Buscador = (props) => {
     const [text, setText] = useState('');
@@ -19,7 +18,7 @@ export default Buscador;
 
 const styles = StyleSheet.create({
     icono: {
-        // padding: 7.7,
+        //padding: 7.7,
         padding: 5.8,
         paddingLeft: 20,
         backgroundColor: 'white',

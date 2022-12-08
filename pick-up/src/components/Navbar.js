@@ -1,31 +1,74 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Appearance, useColorScheme } from 'react-native';
 
 // Screens
 import ProfileNavigation from '../routes/ProfileNavigation';
-import ProfilePage from '../views/ProfilePage';
+//import ProfilePage from '../views/ProfilePage';
 import HomePage from '../views/HomePage';
 import MapPage from '../views/MapPage';
 
-//Screen names
+// Screen names
 const homeName = 'Home';
 const mapName = 'Mapa';
 const profName = 'Perfil';
 
+// DEFAULT LIGHT THEME
+const LightTheme = {
+  dark: false,
+  colors: {
+    notification: 'rgb(255, 59, 48)',
+    primary: 'rgb(0, 122, 255)',
+    aplicacion: 'rgb(94, 59, 59)',
+    card: 'rgb(255, 255, 255)',
+    background: 'rgb(250, 250, 250)',
+
+    opuesto: '#000',
+    borde: 'rgb(216, 216, 216)',
+    text: 'rgb(28, 28, 30)',
+    primero: '#d1d3d6',
+    segundo: '#5f666f',
+  },
+};
+// DEFAULT DARK THEME
+const DarkTheme = {
+  dark: true,
+  colors: {
+    notification: 'rgb(255, 59, 48)',
+    primary: 'rgb(0, 122, 255)',
+    aplicacion: 'rgb(94, 59, 59)',
+    card: '#1b2431',
+    background: '#323a46',
+
+    opuesto: '#fff',
+    borde: '#f7f1e3',
+    text: 'rgb(229, 229, 231)',
+    primero: '#49505a',
+    segundo: '#bbbdc1',
+  },
+};
+
 const Tab = createBottomTabNavigator();
 
-function Navbar() {
+function Navbar({scheme}) {
+  // const tema = scheme;
+  // const tema = useColorScheme();
+  // useEffect(() => {
+  //   console.log(tema);
+  // }, [tema])
+  const tema = 'light';
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer
+      independent={true}
+      theme={tema === 'light' ? LightTheme : DarkTheme}>
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
-          tabBarInactiveBackgroundColor: '#f1f2f6',
-          tabBarActiveBackgroundColor: '#bdc3c7',
-          tabBarInactiveTintColor: '#000',
+          tabBarActiveBackgroundColor: scheme === 'dark' ? '#49505a' : '#d1d3d6',
           tabBarActiveTintColor: '#5E3B3B',
           tabBarIconStyle: { marginTop: 7 },
           tabBarLabelStyle: {
@@ -43,7 +86,6 @@ function Navbar() {
             zIndex: 4,
             borderTopWidth: 0,
           },
-          style: { borderColor: '#011f3b' },
           headerShown: true,
           headerTitleAlign: 'center',
           headerBackButtonShown: true,
@@ -63,17 +105,23 @@ function Navbar() {
             }
 
             // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Icon name={iconName} type="ionicon" size={size} color={color} />;
           },
         })}>
-        <Tab.Screen name={homeName} component={HomePage} />
+        <Tab.Screen
+          name={homeName}
+          component={HomePage}
+          options={{
+            headerStyle: { height: 70, elevation: 3 },
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontSize: 26 },
+          }}
+        />
         <Tab.Screen
           name={mapName}
           component={MapPage}
           options={{
-            title: 'Mapa',
-            headerStyle: { backgroundColor: '#5E3B3B', height: 80 },
-            headerTintColor: '#fff',
+            headerStyle: { height: 70, elevation: 3 },
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },
           }}
@@ -82,9 +130,7 @@ function Navbar() {
           name={profName}
           component={ProfileNavigation}
           options={{
-            title: 'Perfil',
-            headerStyle: { backgroundColor: '#5E3B3B', height: 80 },
-            headerTintColor: '#fff',
+            headerStyle: { height: 70, elevation: 3 },
             headerTitle: 'Hola ...',
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },

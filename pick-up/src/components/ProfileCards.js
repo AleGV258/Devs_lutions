@@ -1,12 +1,23 @@
 import * as React from 'react';
+import {useState, useEffect} from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Switch, useColorScheme } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 function ProfileCards() {
   const navigation = useNavigation();
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const [scheme, setScheme] = useState(useColorScheme());
   return (
     <View style={styles.container}>
+      <Switch
+        value={isEnabled}
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+        onValueChange={toggleSwitch}
+        onChange={() => setScheme(scheme === 'light' ? 'dark' : 'light')}
+      />
       <Pressable
         style={styles.option}
         android_ripple={{ color: '#bdc3c7' }}

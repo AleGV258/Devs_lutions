@@ -14,6 +14,5 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   scroller: {
     flex: 1,
-    backgroundColor: '#fff',
   },
 });

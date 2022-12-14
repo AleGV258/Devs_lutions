@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Appearance, useColorScheme } from 'react-native';
+// import { useColorScheme, Appearance } from 'react-native';
 
 // Screens
 import ProfileNavigation from '../routes/ProfileNavigation';
@@ -54,17 +53,19 @@ const DarkTheme = {
 
 const Tab = createBottomTabNavigator();
 
-function Navbar({scheme}) {
+function Navbar() {
+  // const scheme = useColorScheme();
+  const scheme = 'light';
   // const tema = scheme;
-  // const tema = useColorScheme();
+
   // useEffect(() => {
   //   console.log(tema);
   // }, [tema])
-  const tema = 'light';
+  // const tema = 'light';
   return (
     <NavigationContainer
       independent={true}
-      theme={tema === 'light' ? LightTheme : DarkTheme}>
+      theme={scheme === 'dark' ? DarkTheme : LightTheme}>
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({

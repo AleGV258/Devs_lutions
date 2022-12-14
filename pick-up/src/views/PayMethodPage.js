@@ -1,17 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { ScrollView} from 'react-native';
+import PayMethodCards from '../components/PayMethodCards';
+import GlobalStyles from '../routes/GlobalStyles';
 
 export default function PayMethodPage({ navigation }) {
   return (
-    <ScrollView style={styles.scroller}>
-      <Text>PayMethod</Text>
+    <ScrollView style={GlobalStyles.scroller}>
+      <PayMethodCards></PayMethodCards>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  scroller: {
-    backgroundColor: '#fff',
-    flex: 1,
-  },
-});

@@ -1,17 +1,20 @@
 import * as React from 'react';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { Text, ScrollView, View} from 'react-native';
+import GlobalStyles from '../routes/GlobalStyles';
+import Notification from '../components/NotificationCards';
 
 export default function NotificationPage({ navigation }) {
+  const notification = {
+    name: 'Tu pedido esta listo',
+    description: 'Puedes pasar a recojer tu pedido a la cafeteria'
+  };
   return (
-    <ScrollView style={styles.scroller}>
-      <Text>Notification</Text>
+    <ScrollView style={GlobalStyles.scroller}>
+      <Text style={GlobalStyles.tittleArticulo}>Notificaciones</Text>
+      <Notification notification={notification}></Notification>
+      <View style={GlobalStyles.boxCancelar}>
+      <Text style={GlobalStyles.cancelarArticulo}>Cancelar</Text>
+      </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  scroller: {
-    backgroundColor: '#fff',
-    flex: 1,
-  },
-});

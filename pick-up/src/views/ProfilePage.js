@@ -1,19 +1,14 @@
 import * as React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
-import ProfileCards from '../components/ProfileCards';
+import { ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import ProfileCards from '../components/ProfileCards';
+import GlobalStyles from '../routes/GlobalStyles';
 
 export default function ProfilePage({ navigation }) {
   const { colors } = useTheme();
   return (
-    <ScrollView style={[styles.scroller, { backgroundColor: colors.background }]}>
+    <ScrollView style={[GlobalStyles.scroller, { backgroundColor: colors.background }]}>
       <ProfileCards></ProfileCards>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  scroller: {
-    flex: 1,
-  },
-});

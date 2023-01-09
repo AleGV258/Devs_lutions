@@ -4,14 +4,14 @@ import { Icon } from 'react-native-elements';
 import { useTheme } from '@react-navigation/native';
 import GlobalStyles from '../routes/GlobalStyles';
 
-const Buscador = ({props}) => {
-    const [text, setText] = useState('');
+const Buscador = ({texto, setTexto}) => {
+    // const [text, setText] = useState('ee');
     const { colors } = useTheme();
     return (
         <View>
             <View style={GlobalStyles.containerBuscador} >
-                <Icon name='search' type='ionicon' color={colors.text} style={GlobalStyles.icono} />
-                <TextInput placeholder='Buscar' style={GlobalStyles.buscador} onChangeText={newText => setText(newText)} defaultValue={text}/>
+                <Icon name='search' type='ionicon' color='#5E3B3B' style={GlobalStyles.icono} />
+                <TextInput placeholder='Busca tu comida favorita' style={GlobalStyles.buscador} value={texto.busqueda} onChangeText={newText => setTexto({...texto, busqueda: newText})}/>
             </View>
         </View>
     );

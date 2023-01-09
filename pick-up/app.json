@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "privileged-stroopwafel",
+    "name": "Pick Up",
     "slug": "snack-1f573c48-860f-4605-8759-a853654ee40a",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "pick.up"
     },
     "web": {
       "favicon": "./assets/favicon.png"

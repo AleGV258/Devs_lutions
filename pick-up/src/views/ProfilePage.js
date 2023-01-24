@@ -8,7 +8,7 @@ export default function ProfilePage({ navigation }) {
   const { colors } = useTheme();
   return (
     <ScrollView style={[GlobalStyles.scroller, { backgroundColor: colors.background }]}>
-      <ProfileCards></ProfileCards>
+      <ProfileCards navigation={navigation}></ProfileCards>
     </ScrollView>
   );
 }

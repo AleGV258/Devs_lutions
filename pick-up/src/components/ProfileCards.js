@@ -5,8 +5,8 @@ import { Text, View, Pressable, useColorScheme } from 'react-native';
 import { Icon } from 'react-native-elements';
 import GlobalStyles from '../routes/GlobalStyles';
 
-function ProfileCards() {
-  const navigation = useNavigation();
+function ProfileCards({navigation}) {
+  // const navigation = useNavigation(); 
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const [scheme, setScheme] = useState(useColorScheme());
@@ -25,7 +25,7 @@ function ProfileCards() {
           style={GlobalStyles.iconoFinal}
         />
       </Pressable>
-      <Pressable
+      {/* <Pressable
         style={GlobalStyles.option}
         android_ripple={{ color: '#bdc3c7' }}
         onPress={() => navigation.navigate('PayMethodPage')}>
@@ -37,7 +37,7 @@ function ProfileCards() {
           color="#000"
           style={GlobalStyles.iconoFinal}
         />
-      </Pressable>
+      </Pressable> */}
       <Pressable
         style={GlobalStyles.option}
         android_ripple={{ color: '#bdc3c7' }}
@@ -76,6 +76,13 @@ function ProfileCards() {
           color="#000"
           style={GlobalStyles.iconoFinal}
         />
+      </Pressable> 
+      <Pressable
+        style={[GlobalStyles.option, {backgroundColor: '#5E3B3B', borderRadius: 15, marginHorizontal: 40, marginTop: 50}]}
+        android_ripple={{ color: '#bdc3c7' }}
+        // value={login.usuarioLogin}
+        onPress={() => navigation.navigate('LoginNavigation')}>
+        <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Cerrar Sesión</Text>
       </Pressable>
     </View>
   );

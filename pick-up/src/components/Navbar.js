@@ -1,5 +1,6 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
+import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,14 +8,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Screens
 import ProfileNavigation from '../routes/ProfileNavigation';
+import ArticleNavigation from '../routes/ArticleNavigation';
 //import ProfilePage from '../views/ProfilePage';
-import HomePage from '../views/HomePage';
 import MapPage from '../views/MapPage';
-
-// Screen names
-const homeName = 'Home';
-const mapName = 'Mapa';
-const profName = 'Perfil';
 
 // DEFAULT LIGHT THEME
 const LightTheme = {
@@ -53,7 +49,7 @@ const DarkTheme = {
 
 const Tab = createBottomTabNavigator();
 
-function Navbar() {
+function Navbar({navigation}) {
   // const scheme = useColorScheme();
   const scheme = 'light';
   // const tema = scheme;
@@ -67,7 +63,7 @@ function Navbar() {
       independent={true}
       theme={scheme === 'dark' ? DarkTheme : LightTheme}>
       <Tab.Navigator
-        initialRouteName={homeName}
+        initialRouteName="Menú"
         screenOptions={({ route }) => ({
           tabBarActiveBackgroundColor: scheme === 'dark' ? '#49505a' : '#d1d3d6',
           tabBarActiveTintColor: '#5E3B3B',
@@ -97,11 +93,11 @@ function Navbar() {
             let rn = route.name;
             color = '#5E3B3B';
 
-            if (rn === homeName) {
+            if (rn === "Menú") {
               iconName = focused ? 'apps' : 'apps-outline';
-            } else if (rn === mapName) {
+            } else if (rn === "Mapa") {
               iconName = focused ? 'compass' : 'compass-outline';
-            } else if (rn === profName) {
+            } else if (rn === "Perfil") {
               iconName = focused ? 'people' : 'people-outline';
             }
 
@@ -110,8 +106,8 @@ function Navbar() {
           },
         })}>
         <Tab.Screen
-          name={homeName}
-          component={HomePage}
+          name="Menú"
+          component={ArticleNavigation}
           options={{
             headerStyle: { height: 70, elevation: 3 },
             headerTitleAlign: 'center',
@@ -119,7 +115,7 @@ function Navbar() {
           }}
         />
         <Tab.Screen
-          name={mapName}
+          name="Mapa"
           component={MapPage}
           options={{
             headerStyle: { height: 70, elevation: 3 },
@@ -128,11 +124,10 @@ function Navbar() {
           }}
         />
         <Tab.Screen
-          name={profName}
+          name="Perfil"
           component={ProfileNavigation}
           options={{
             headerStyle: { height: 70, elevation: 3 },
-            headerTitle: 'Hola ...',
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },
             headerShown: false,

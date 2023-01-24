@@ -8,7 +8,7 @@ import GlobalStyles from '../routes/GlobalStyles';
 export default function HomeScreen({ navigation }) {
   const [textoBuscado, setTextoBuscado] = useState({ busqueda: '' });
   return (
-    <ScrollView style={[GlobalStyles.scroller, {marginBottom: 60,}]}>
+    <ScrollView style={GlobalStyles.scroller}>
       <Buscador texto={textoBuscado} setTexto={(newText) => {setTextoBuscado({ ...newText })}}></Buscador>
       <FoodCards textoBuscar={textoBuscado}></FoodCards>
     </ScrollView>

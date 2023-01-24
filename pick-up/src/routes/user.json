@@ -1,0 +1,14 @@
+[
+    {
+        "Id_Usuario":1,
+        "Nombre":"",
+        "Apellidos":"",
+        "Correo":"",
+        "Contrasena":"",
+        "Edad":0,
+        "Genero":"",
+        "Telefono":"",
+        "Pago_Preferido":"",
+        "Foto":""
+    }
+]

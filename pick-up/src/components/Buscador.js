@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { useTheme } from '@react-navigation/native';
 import GlobalStyles from '../routes/GlobalStyles';
 
 const Buscador = ({texto, setTexto}) => {
-    // const [text, setText] = useState('ee');
     const { colors } = useTheme();
     return (
         <View>

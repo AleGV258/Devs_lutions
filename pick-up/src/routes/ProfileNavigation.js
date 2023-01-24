@@ -5,43 +5,45 @@ import { useTheme } from '@react-navigation/native';
 
 import ProfilePage from '../views/ProfilePage';
 import UserPage from '../views/UserPage';
-import PayMethodPage from '../views/PayMethodPage';
 import ShoppingCartPage from '../views/ShoppingCartPage';
 import OrderHistoryPage from '../views/OrderHistoryPage';
 import NotificationPage from '../views/NotificationPage';
+import LoginNavigation from '../routes/LoginNavigation';
+import PayPage from '../views/PayPage';
+import DepositPage from '../views/DepositPage';
 
-const Stack = createStackNavigator();
+const StackProfile = createStackNavigator();
 
-var usuario = 'Usuario';
+const usuario = require('../routes/user.json');
 
 const ProfileNavigation = ({scheme}) => {
   const { colors } = useTheme();
   return (
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="ProfilePage">
-        <Stack.Screen
+      <StackProfile.Navigator initialRouteName="ProfilePage">
+        <StackProfile.Screen
           name="ProfilePage"
           component={ProfilePage}
           options={{
             headerStyle: { backgroundColor: colors.card, height: 70 },
             headerTintColor: colors.text,
-            headerTitle: 'Hola ' + usuario,
+            headerTitle: 'Hola ' + usuario[0].Nombre,
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-        <Stack.Screen
+        <StackProfile.Screen
           name="UserPage"
           component={UserPage}
           options={{
             headerStyle: { backgroundColor: colors.card, height: 70 },
             headerTintColor: colors.text,
-            headerTitle: usuario,
+            headerTitle: "Perfil",
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-        <Stack.Screen
+        {/* <StackProfile.Screen
           name="PayMethodPage"
           component={PayMethodPage}
           options={{
@@ -51,8 +53,8 @@ const ProfileNavigation = ({scheme}) => {
             headerTitleAlign: 'center',
             headerTitleStyle: { fontSize: 26 },
           }}
-        />
-        <Stack.Screen
+        /> */}
+        <StackProfile.Screen
           name="ShoppingCartPage"
           component={ShoppingCartPage}
           options={{
@@ -63,7 +65,7 @@ const ProfileNavigation = ({scheme}) => {
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-        <Stack.Screen
+        <StackProfile.Screen
           name="NotificationPage"
           component={NotificationPage}
           options={{
@@ -74,7 +76,7 @@ const ProfileNavigation = ({scheme}) => {
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-        <Stack.Screen
+        <StackProfile.Screen
           name="OrderHistoryPage"
           component={OrderHistoryPage}
           options={{
@@ -85,7 +87,42 @@ const ProfileNavigation = ({scheme}) => {
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-      </Stack.Navigator>
+        <StackProfile.Screen
+          name="LoginNavigation"
+          component={LoginNavigation}
+          options={{
+            headerStyle: { backgroundColor: colors.card, height: 70 },
+            headerTintColor: colors.text,
+            headerTitle: 'Login',
+            headerShown: false,
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontSize: 26 },
+            
+          }}
+        />
+        <StackProfile.Screen
+          name="PayPage"
+          component={PayPage}
+          options={{
+              headerStyle: { backgroundColor: colors.card, height: 70 },
+              headerTintColor: colors.text,
+              headerTitle: 'Pagar',
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 26 },
+          }}
+        />
+        <StackProfile.Screen
+          name="DepositPage"
+          component={DepositPage}
+          options={{
+              headerStyle: { backgroundColor: colors.card, height: 70 },
+              headerTintColor: colors.text,
+              headerTitle: 'Pagar',
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 26 },
+          }}
+        />
+      </StackProfile.Navigator>
     </NavigationContainer>
   );
 };

@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, SafeAreaView, Platform } from 'react-native';
 import LoginNavigation from './src/routes/LoginNavigation';
-// import ProfileNavigation from './src/routes/ProfileNavigation';
-// import Navbar from './src/components/Navbar';
 
 export default function App() {
   return (

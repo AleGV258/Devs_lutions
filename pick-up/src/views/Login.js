@@ -91,12 +91,6 @@ export default function Login({ navigation }) {
         <TouchableOpacity style={[GlobalStyles.loginbtnR, {marginTop: 30, marginBottom: 5}]} onPress={() => navigation.navigate('SignIn')}>
           <Text style={GlobalStyles.textBtnGoogleR}>Registrate</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity style={GlobalStyles.googlebtnL}>
-          <Text style={GlobalStyles.textBtnGoogleL}>Continue with Google</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={GlobalStyles.appleBtnL}>
-          <Text style={GlobalStyles.textBtnAppleL}>Continue with Apple</Text>
-        </TouchableOpacity> */}
         <StatusBar style="auto" />
     </View>
   );

@@ -66,7 +66,6 @@ export default function OrderHistoryPage({ navigation }) {
         <View>
           <Text style={GlobalStyles.titleArticulo}>Artículos:</Text>
           { newData }
-          {/* <Text style={GlobalStyles.cancelarArticulo}>Cancelar</Text> */}
         </View>
       </ScrollView>
     );

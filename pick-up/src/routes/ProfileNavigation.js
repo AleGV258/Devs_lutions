@@ -44,17 +44,6 @@ const ProfileNavigation = ({scheme}) => {
             headerTitleStyle: { fontSize: 26 },
           }}
         />
-        {/* <StackProfile.Screen
-          name="PayMethodPage"
-          component={PayMethodPage}
-          options={{
-            headerStyle: { backgroundColor: colors.card, height: 70 },
-            headerTintColor: colors.text,
-            headerTitle: 'Método de Pago',
-            headerTitleAlign: 'center',
-            headerTitleStyle: { fontSize: 26 },
-          }}
-        /> */}
         <StackProfile.Screen
           name="ShoppingCartPage"
           component={ShoppingCartPage}

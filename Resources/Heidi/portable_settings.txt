@@ -4,9 +4,9 @@ ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
 ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
 ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
 ColSort_connform.ListSessions<|||>1<|||>0,0
-querymemoheight<|||>3<|||>192
-MainWinLeft<|||>3<|||>147
-MainWinTop<|||>3<|||>71
+querymemoheight<|||>3<|||>61
+MainWinLeft<|||>3<|||>98
+MainWinTop<|||>3<|||>113
 ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
 ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
 ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
@@ -31,8 +31,8 @@ ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,
 ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
 ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
 ColSort_MainForm.ListTables<|||>1<|||>0,0
-MainWinMaximized<|||>3<|||>1
-ColWidths_frmTableEditor.listColumns<|||>1<|||>58,100,154,90,60,65,50,117,130,140,100,100
+MainWinMaximized<|||>3<|||>0
+ColWidths_frmTableEditor.listColumns<|||>1<|||>47,100,154,90,60,65,50,117,130,140,100,100
 ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
 ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
 ColSort_frmTableEditor.listColumns<|||>1<|||>-1,0
@@ -48,7 +48,15 @@ ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,417
 ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
+MemoEditorHeight<|||>3<|||>504
+sqloutheight<|||>3<|||>84
+MainWinOnMonitor<|||>3<|||>1
+MainWinWidth<|||>3<|||>993
+MainWinHeight<|||>3<|||>525
+SessionManager_WindowLeft<|||>3<|||>112
+SessionManager_WindowTop<|||>3<|||>115
 SQLFile0<|||>1<|||>C:\Users\alegv\OneDrive\Documentos\Escuela\Administración de Proyectos de Software\App\Devs_lutions\Resources\Heidi\Backups\query-tab-2023-01-15_17-30-38-362.sql
+MemoEditorWidth<|||>3<|||>701
 Servers\Devs_Lutions\SessionCreated<|||>1<|||>2022-12-21 16:17:37
 Servers\Devs_Lutions\Host<|||>1<|||>pick-up.mysql.database.azure.com
 Servers\Devs_Lutions\WindowsAuth<|||>3<|||>0
@@ -86,9 +94,9 @@ Servers\Devs_Lutions\LogFileDdl<|||>3<|||>0
 Servers\Devs_Lutions\LogFileDml<|||>3<|||>0
 Servers\Devs_Lutions\LogFilePath<|||>1<|||>C:\Users\alegv\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
 Servers\Devs_Lutions\ServerVersionFull<|||>1<|||>5.7.39-log - MySQL Community Server (GPL)
-Servers\Devs_Lutions\ConnectCount<|||>3<|||>5
+Servers\Devs_Lutions\ConnectCount<|||>3<|||>7
 Servers\Devs_Lutions\ServerVersion<|||>3<|||>50739
-Servers\Devs_Lutions\LastConnect<|||>1<|||>2023-01-22 21:25:16
+Servers\Devs_Lutions\LastConnect<|||>1<|||>2023-01-24 14:43:16
 Servers\Devs_Lutions\lastUsedDB<|||>1<|||>devs_lutions
 Servers\Devs_Lutions\QueryHistory\7<|||>1<|||>2023-01-15 17:31:22|devs_lutions|62|SELECT * FROM usuarios;
 Servers\Devs_Lutions\QueryHistory\3<|||>1<|||>2023-01-15 17:33:43|devs_lutions|264|UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/ale.gv258@gmail.com.jpg" WHERE Id_Usuario = 2;<{{{><}}}>UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/charlie51@gmail.com.jpg" WHERE Id_Usuario = 3;<{{{><}}}>UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/leonardo@gmail.com.jpg" WHERE Id_Usuario = 1;
@@ -99,3 +107,22 @@ Servers\Devs_Lutions\QueryHistory\1<|||>1<|||>2023-01-22 21:20:13|devs_lutions|1
 Servers\Devs_Lutions\QueryHistory\2<|||>1<|||>2023-01-22 21:20:52|devs_lutions|62|UPDATE usuarios SET Telefono = "", Nombre = "ADMIN" WHERE Id_Usuario =1;
 Servers\Devs_Lutions\QueryHistory\4<|||>1<|||>2023-01-22 21:23:13|devs_lutions|63|UPDATE usuarios SET Apellidos = "", Correo = "", Contrasena = "", Edad = 0, Genero = "Masculino", Pago_Preferido = "Efectivo", Foto = "" WHERE Id_Usuario =1;
 Servers\Devs_Lutions\QueryHistory\5<|||>1<|||>2023-01-22 21:25:36|devs_lutions|62|UPDATE usuarios SET Apellidos = "", Correo = "ADMIN@ADMIN", Contrasena = "ADMIN", Edad = 0, Genero = "Masculino", Pago_Preferido = "Efectivo", Foto = "" WHERE Id_Usuario =1;
+Servers\Devs_Lutions\QueryHistory\6<|||>1<|||>2023-01-24 11:56:24|devs_lutions|62|SELECT * FROM pedidos
+Servers\Devs_Lutions\QueryHistory\11<|||>1<|||>2023-01-24 11:58:56|devs_lutions|266|ALTER TABLE pedidos MODIFY ID_Pedido INT AUTO_INCREMENT;
+Servers\Devs_Lutions\QueryHistory\12<|||>1<|||>2023-01-24 12:00:05|devs_lutions|47|SHOW CREATE TABLE `devs_lutions`.`pedidos`;
+Servers\Devs_Lutions\QueryHistory\13<|||>1<|||>2023-01-24 12:02:10|devs_lutions|921|ALTER TABLE articulos MODIFY ID_Articulo INT AUTO_INCREMENT;<{{{><}}}>ALTER TABLE locales MODIFY ID_Local INT AUTO_INCREMENT;<{{{><}}}>ALTER TABLE ubicaciones MODIFY ID_Ubicacion INT AUTO_INCREMENT;<{{{><}}}>ALTER TABLE usuarios MODIFY ID_Usuario INT AUTO_INCREMENT;<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\15<|||>1<|||>2023-01-24 12:04:36|devs_lutions|62|SELECT * FROM pedidos<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\14<|||>1<|||>2023-01-24 12:10:28|devs_lutions|62|SELECT * FROM ubicaciones<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\16<|||>1<|||>2023-01-24 12:11:48|devs_lutions|47|SELECT * FROM locales<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\17<|||>1<|||>2023-01-24 12:19:14|devs_lutions|47|SELECT * FROM usuarios<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\18<|||>1<|||>2023-01-24 12:26:49|devs_lutions|62|SELECT * FROM articulos<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\19<|||>1<|||>2023-01-24 12:36:58|devs_lutions|46|SELECT * FROM ubicaciones<{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\20<|||>1<|||>2023-01-24 12:39:25|devs_lutions|62|SELECT * FROM locales<{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\21<|||>1<|||>2023-01-24 12:41:59|devs_lutions|62|SELECT * FROM pedidos<{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\22<|||>1<|||>2023-01-24 12:44:02|devs_lutions|63|SELECT * FROM usuarios<{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\23<|||>1<|||>2023-01-24 12:46:46|devs_lutions|47|SELECT * FROM articulos<{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\25<|||>1<|||>2023-01-24 15:10:25|devs_lutions|47|SELECT * FROM usuarios<{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\27<|||>1<|||>2023-01-24 15:18:07|devs_lutions|63|SHOW CREATE TABLE `devs_lutions`.`usuarios`;
+Servers\Devs_Lutions\QueryHistory\24<|||>1<|||>2023-01-24 15:21:33|devs_lutions|375|INSERT INTO usuarios(Nombre, Apellidos, Correo, Contrasena, Edad, Genero, Telefono, Pago_Preferido, Foto) VALUES('p', '', 'p', 'p', 0, DEFAULT, DEFAULT, DEFAULT, DEFAULT);<{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\28<|||>1<|||>2023-01-24 15:35:51|devs_lutions|63|SHOW CREATE TABLE `devs_lutions`.`usuarios`;<{{{><}}}>
+Servers\Devs_Lutions\QueryHistory\26<|||>1<|||>2023-01-24 16:01:12|devs_lutions|62|SELECT * FROM usuarios

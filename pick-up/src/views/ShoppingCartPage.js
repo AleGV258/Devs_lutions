@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Text, ScrollView, View, Image, Pressable } from 'react-native';
+import { Text, ScrollView, View, Image, Pressable, Alert } from 'react-native';
 import GlobalStyles from '../routes/GlobalStyles';
 
 const usuario = require('../routes/user.json');
@@ -36,11 +36,22 @@ export default function ShoppingCartPage({ navigation }) {
       return true
     })
 
-    const newData = pedidosData.map( pedido => {
-      articulos.push(pedido.Id_pedido)
+    const deleteData = async (posicion) => {
+      var url = "https://devs-lutions-api.azurewebsites.net/pedidos/delete/"+pedidosData[posicion].ID_Pedido
+      await fetch(url);
+
+      Alert.alert('Eliminado del Carrito', 'El artículo ha sido sido eliminado del carrito',
+        [
+          {text: '¡Genial!', onPress: () => console.log('Si')},
+        ],
+      );
+    };
+
+    const newData = pedidosData.map( (pedido, index) => {
+      articulos.push(pedido.ID_Pedido)
       return (
-        <View style={GlobalStyles.food} key={pedido.Id_pedido}>
-          <View style={GlobalStyles.foodCard} key={pedido.Id_Articulo}>
+        <Pressable style={GlobalStyles.food} key={pedido.ID_Pedido} onPress={() => deleteData(index)} android_ripple={{ color: '#bdc3c7' }}>
+          <View style={GlobalStyles.foodCard} key={pedido.Id_articulo}>
             <Image
               source={{uri: articulosData[(pedido.Id_articulo)-1].Imagen}}
               style={GlobalStyles.foodImage}
@@ -49,7 +60,7 @@ export default function ShoppingCartPage({ navigation }) {
             <Text style={GlobalStyles.txtFood}><Text style={GlobalStyles.descPrecFood}>Detalles:  </Text><Text>{articulosData[(pedido.Id_articulo)-1].Detalles}</Text></Text>
             <Text style={[GlobalStyles.txtFood, {marginBottom: 10,}]}><Text style={GlobalStyles.descPrecFood}>Precio:  </Text><Text>${articulosData[(pedido.Id_articulo)-1].Precio}</Text></Text>
           </View>
-        </View>
+        </Pressable>
       )
     })
 
@@ -61,7 +72,7 @@ export default function ShoppingCartPage({ navigation }) {
           <Pressable
             style={[GlobalStyles.option, {backgroundColor: '#5E3B3B', borderRadius: 15, marginHorizontal: 40, marginTop: 30, marginBottom: 30,}]}
             android_ripple={{ color: '#bdc3c7' }}
-            onPress={() => navigation.navigate('PayPage', {articuloPagar: articulos})}>
+            onPress={() => navigation.navigate('PayPage', {articuloPagar: articulos, tipoData: "U"})}>
             <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Pagar Todo</Text>
           </Pressable>
         </View>

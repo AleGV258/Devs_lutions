@@ -7,20 +7,30 @@ import GlobalStyles from '../routes/GlobalStyles';
 export default function PayPage({ route, navigation }) {
   try {
     const idArticulo = route.params.articuloPagar
+    const tipoData = route.params.tipoData
     var total = 0;
-    const [data, setData] = useState([]);
-    const fetchData = async () => {
-        const resp = await fetch("https://devs-lutions-api.azurewebsites.net/articulos");
-        const data = await resp.json();
-        setData(data);
+    const [dataPedido, setDataPedido] = useState([]);
+    const [dataArticulo, setDataArticulo] = useState([]);
+    const fetchDataPedido = async () => {
+        const resp = await fetch("https://devs-lutions-api.azurewebsites.net/pedidos");
+        const dataPedido = await resp.json();
+        setDataPedido(dataPedido);
     };
     useEffect(() => {
-        fetchData()
+        fetchDataPedido()
+    }, [])
+    const fetchDataArticulo = async () => {
+        const resp = await fetch("https://devs-lutions-api.azurewebsites.net/articulos");
+        const dataArticulo = await resp.json();
+        setDataArticulo(dataArticulo);
+    };
+    useEffect(() => {
+        fetchDataArticulo()
     }, [])
 
-    const carrito = data.filter( datos => {
+    const carrito = dataPedido.filter( datos => {
       return( idArticulo.some( element => {
-        if(datos.Id_Articulo == element){
+        if(datos.ID_Pedido == element){
           return true
         }else{
           return false
@@ -28,12 +38,16 @@ export default function PayPage({ route, navigation }) {
       }))
     })
 
-    const newArticleData = carrito.map( articulo => {
-        total = total + articulo.Precio
+    const articulosData = dataArticulo.filter( articulo => {
+      return true
+    })
+
+    const newArticleData = carrito.map( pedido => {
+        total = total + pedido.Total
         return(
-            <View style={GlobalStyles.viewPagarResumen} key={articulo.Id_Articulo}>
-                <Text style={GlobalStyles.textoResumenNombre}>{articulo.Nombre}</Text>
-                <Text style={GlobalStyles.textoResumenPrecio}>$ {articulo.Precio}</Text>
+            <View style={GlobalStyles.viewPagarResumen} key={pedido.ID_Pedido}>
+                <Text style={GlobalStyles.textoResumenNombre}>{articulosData[(pedido.Id_articulo)-1].Nombre}</Text>
+                <Text style={GlobalStyles.textoResumenPrecio}>$ {pedido.Total}</Text>
             </View>
         )
     })
@@ -49,6 +63,15 @@ export default function PayPage({ route, navigation }) {
             <Text style={GlobalStyles.textoResumenNombre}>Total:</Text>
             <Text style={GlobalStyles.textoResumenPrecio}>$ {total}</Text>
         </View>
+        <View style={GlobalStyles.viewPagarResumen}>
+            <Text style={GlobalStyles.textoResumenNombre}>Comisión:</Text>
+            <Text style={GlobalStyles.textoResumenPrecio}>$ {(total/10)}</Text>
+        </View>
+        <View style={GlobalStyles.linea}></View>
+        <View style={GlobalStyles.viewPagarResumen}>
+            <Text style={GlobalStyles.textoResumenNombre}>Total con Comisión:</Text>
+            <Text style={GlobalStyles.textoResumenPrecio}>$ {total+(total/10)}</Text>
+        </View>
         <Pressable
             style={[GlobalStyles.option, {backgroundColor: '#2980b9', borderRadius: 15, marginHorizontal: 40, marginTop: 30}]}
             android_ripple={{ color: '#bdc3c7' }}
@@ -60,14 +83,14 @@ export default function PayPage({ route, navigation }) {
             style={[GlobalStyles.option, {backgroundColor: '#27ae60', borderRadius: 15, marginHorizontal: 40, marginTop: 30}]}
             android_ripple={{ color: '#bdc3c7' }}
             // value={login.usuarioLogin}
-            onPress={() => navigation.navigate('DepositPage', {tipoPago: "E", total: {total}})}>
-            <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Pagar con Efectivo</Text>
+            onPress={() => navigation.navigate('DepositPage', {tipoPago: "E", total: {total}, articulos: {idArticulo}, tipoData: {tipoData}})}>
+            <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Pagar en Efectivo</Text>
         </Pressable>
         <Pressable
             style={[GlobalStyles.option, {backgroundColor: '#c0392b', borderRadius: 15, marginHorizontal: 40, marginTop: 30, marginBottom: 30,}]}
             android_ripple={{ color: '#bdc3c7' }}
             // value={login.usuarioLogin}
-            onPress={() => navigation.navigate('DepositPage', {tipoPago: "D", total: {total}})}>
+            onPress={() => navigation.navigate('DepositPage', {tipoPago: "D", total: {total}, articulos: {idArticulo}, tipoData: {tipoData}})}>
             <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Pagar con Depósito</Text>
         </Pressable>
       </ScrollView> 

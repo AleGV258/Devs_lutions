@@ -5,6 +5,7 @@ import { useTheme } from '@react-navigation/native';
 
 import ProfilePage from '../views/ProfilePage';
 import UserPage from '../views/UserPage';
+import ModifyUserPage from '../views/ModifyUserPage';
 import ShoppingCartPage from '../views/ShoppingCartPage';
 import OrderHistoryPage from '../views/OrderHistoryPage';
 import NotificationPage from '../views/NotificationPage';
@@ -118,6 +119,17 @@ const ProfileNavigation = ({scheme}) => {
               headerStyle: { backgroundColor: colors.card, height: 70 },
               headerTintColor: colors.text,
               headerTitle: 'Pagar',
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 26 },
+          }}
+        />
+        <StackProfile.Screen
+          name="ModifyUserPage"
+          component={ModifyUserPage}
+          options={{
+              headerStyle: { backgroundColor: colors.card, height: 70 },
+              headerTintColor: colors.text,
+              headerTitle: 'Modificar Usuario',
               headerTitleAlign: 'center',
               headerTitleStyle: { fontSize: 26 },
           }}

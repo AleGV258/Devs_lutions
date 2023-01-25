@@ -80,7 +80,7 @@ function ProfileCards({navigation}) {
       <Pressable
         style={[GlobalStyles.option, {backgroundColor: '#5E3B3B', borderRadius: 15, marginHorizontal: 40, marginTop: 50}]}
         android_ripple={{ color: '#bdc3c7' }}
-        // value={login.usuarioLogin}
+
         onPress={() => navigation.navigate('LoginNavigation')}>
         <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Cerrar Sesión</Text>
       </Pressable>

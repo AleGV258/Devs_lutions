@@ -11,8 +11,8 @@ export default function MapPage() {
         <MapView
           style={styles.mapStyle}
           initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: 20.5968699,
+            longitude: -100.3808891,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -20,8 +20,8 @@ export default function MapPage() {
           <Marker
             draggable
             coordinate={{
-              latitude: 37.78825,
-              longitude: -122.4324,
+              latitude: 20.5968699,
+              longitude: -100.3808891,
             }}
             onDragEnd={
               (e) => alert(JSON.stringify(e.nativeEvent.coordinate))

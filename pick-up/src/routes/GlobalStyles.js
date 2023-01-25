@@ -99,12 +99,13 @@ const GlobalStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   tituloR: {
-    fontSize: 60,
+    fontSize: 40,
     color:'#FFFFFF' ,
     fontWeight:'bold',
+    textAlign: 'center',
   },
   subtituloR:{
-    fontSize: 40,
+    fontSize: 30,
     color:'#FFFFFF' ,
     marginBottom:30,
   },
@@ -133,6 +134,15 @@ const GlobalStyles = StyleSheet.create({
     height: 50,
     borderRadius: 30,
     backgroundColor: '#FFFFFF',
+    marginBottom:15,
+  },
+  textInputRUser:{
+    padding:10,
+    paddingStart:30,
+    width:'80%',
+    height: 50,
+    borderRadius: 30,
+    backgroundColor: '#BBBBBB',
     marginBottom:15,
   },
   textBtnR:{
@@ -327,7 +337,7 @@ const GlobalStyles = StyleSheet.create({
     width: 200,
     fontWeight: '600',
     paddingLeft: 5,
-    textAlign: 'left',
+    textAlign: 'center',
   },
   option: {
     flex: 1,

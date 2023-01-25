@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import GlobalStyles from '../routes/GlobalStyles';
 
 const usuario = require('../routes/user.json');
@@ -25,7 +25,7 @@ export default function Login({ navigation }) {
   const userData = data.filter( datos => {
     if((datos.Correo == textoCorreo.usuarioCorreo) && (datos.Contrasena == textoContrasena.usuarioContrasena)){
       contador++;
-      usuario[0].Id_Usuario = datos.Id_Usuario;
+      usuario[0].Id_Usuario = datos.ID_Usuario;
       usuario[0].Nombre = datos.Nombre;
       usuario[0].Apellidos = datos.Apellidos;
       usuario[0].Correo = datos.Correo;
@@ -46,16 +46,32 @@ export default function Login({ navigation }) {
     }
   })
 
+  const alerta = () => {
+    Alert.alert('Hola Nuevamente', 'Bienvenido ' + usuario[0].Nombre,
+      [
+        {text: '¡Genial!', onPress: () => console.log('Si')},
+      ],
+    );
+  };
+
+  const alertaNo = () => {
+    Alert.alert('Prueba Nuevamente', 'Correo o Contraseña Incorrectas',
+      [
+        {text: 'Ok'},
+      ],
+    );
+  };
+
   var userLogin = userData.map( datos => {
     if((datos.Correo == textoCorreo.usuarioCorreo) && (datos.Contrasena == textoContrasena.usuarioContrasena)){
       return(
-        <TouchableOpacity style={GlobalStyles.loginBtnL} onPress={() => navigation.navigate('Navbar')} key={datos.Id_Usuario}>
+        <TouchableOpacity style={GlobalStyles.loginBtnL} onPress={() => {alerta(); navigation.navigate('Navbar')}} key={datos.Id_Usuario}>
           <Text style={GlobalStyles.textBtnL}>Iniciar Sesión</Text>
         </TouchableOpacity>
       )
     }else{
       return(
-        <TouchableOpacity style={GlobalStyles.loginBtnL} key={datos.Id_Usuario}>
+        <TouchableOpacity style={GlobalStyles.loginBtnL} key={datos.Id_Usuario} onPress={() => {alertaNo();}}>
           <Text style={GlobalStyles.textBtnL}>Iniciar Sesión</Text>
         </TouchableOpacity>
       )
@@ -75,12 +91,12 @@ export default function Login({ navigation }) {
         <TouchableOpacity style={[GlobalStyles.loginbtnR, {marginTop: 30, marginBottom: 5}]} onPress={() => navigation.navigate('SignIn')}>
           <Text style={GlobalStyles.textBtnGoogleR}>Registrate</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={GlobalStyles.googlebtnL}>
+        {/* <TouchableOpacity style={GlobalStyles.googlebtnL}>
           <Text style={GlobalStyles.textBtnGoogleL}>Continue with Google</Text>
         </TouchableOpacity>
         <TouchableOpacity style={GlobalStyles.appleBtnL}>
           <Text style={GlobalStyles.textBtnAppleL}>Continue with Apple</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <StatusBar style="auto" />
     </View>
   );

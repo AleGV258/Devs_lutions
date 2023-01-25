@@ -29,7 +29,7 @@ const FoodCards = ( textoBuscado ) => {
 
     const newData = busquedaData.map( datos => {
       return (
-        <Pressable style={GlobalStyles.foodCard} key={datos.Id_Articulo} onPress={() => navigation.navigate('Artículo', {articulo: datos.Id_Articulo})}>
+        <Pressable style={GlobalStyles.foodCard} key={datos.ID_Articulo} onPress={() => navigation.navigate('Artículo', {articulo: datos.ID_Articulo})}>
           <Image
             source={{uri: datos.Imagen}}
             style={GlobalStyles.foodImage}

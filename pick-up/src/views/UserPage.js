@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Pressable } from 'react-native';
 import GlobalStyles from '../routes/GlobalStyles';
 
 const usuario = require('../routes/user.json');
@@ -66,6 +66,12 @@ export default function UserPage({ navigation }) {
     return (
       <ScrollView style={GlobalStyles.scroller}>
         { newData }
+        <Pressable
+          style={[GlobalStyles.option, {backgroundColor: '#5E3B3B', borderRadius: 15, marginHorizontal: 40, marginTop: 20, marginBottom: 30}]}
+          android_ripple={{ color: '#bdc3c7' }}
+          onPress={() => navigation.navigate('ModifyUserPage')}>
+        <Text style={[GlobalStyles.texto, {textAlign: 'center', width: 240, color: "#fff"}]}>Modificar Información</Text>
+      </Pressable>
       </ScrollView>
     );
   }catch(error) {

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/882abb77-82ee-4f64-8562-fa9ef5af2f46/AppServices/subscriptions/882abb77-82ee-4f64-8562-fa9ef5af2f46/resourceGroups/DEVS_LUTIONS/providers/Microsoft.Web/sites/devs-lutions-api",
+    "appService.deploySubpath": "."
+}

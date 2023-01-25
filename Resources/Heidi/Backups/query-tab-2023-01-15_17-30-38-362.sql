@@ -1,1 +1,1 @@
-UPDATE usuarios SET Apellidos = "", Correo = "ADMIN@ADMIN", Contrasena = "ADMIN", Edad = 0, Genero = "Masculino", Pago_Preferido = "Efectivo", Foto = "" WHERE Id_Usuario =1;
+SELECT * FROM usuarios

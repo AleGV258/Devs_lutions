@@ -11,23 +11,23 @@ export default function MapPage() {
         <MapView
           style={styles.mapStyle}
           initialRegion={{
-            latitude: 20.5968699,
-            longitude: -100.3808891,
-            latitudeDelta: 0.0922,
+            latitude: 20.59678557600082,
+            longitude: -100.38094955237226,
+            latitudeDelta: 0.0122,
             longitudeDelta: 0.0421,
           }}
           customMapStyle={mapStyle}>
           <Marker
             draggable
             coordinate={{
-              latitude: 20.5968699,
-              longitude: -100.3808891,
+              latitude: 20.59678557600082,
+              longitude: -100.38094955237226,
             }}
             onDragEnd={
               (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
             }
-            title={'Test Marker'}
-            description={'This is a description of the marker'}
+            title={'Aihnoa Helado'}
+            description={'Helado Artesanal'}
           />
         </MapView>
     </ScrollView>

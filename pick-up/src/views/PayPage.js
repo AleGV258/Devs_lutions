@@ -43,13 +43,23 @@ export default function PayPage({ route, navigation }) {
     })
 
     const newArticleData = carrito.map( pedido => {
-        total = total + pedido.Total
+      if(tipoData == "I"){
+        total = total + articulosData[(idArticulo)-1].Precio
         return(
-            <View style={GlobalStyles.viewPagarResumen} key={pedido.ID_Pedido}>
-                <Text style={GlobalStyles.textoResumenNombre}>{articulosData[(pedido.Id_articulo)-1].Nombre}</Text>
-                <Text style={GlobalStyles.textoResumenPrecio}>$ {pedido.Total}</Text>
+          <View style={GlobalStyles.viewPagarResumen} key={pedido.ID_Pedido}>
+                <Text style={GlobalStyles.textoResumenNombre}>{articulosData[(idArticulo)-1].Nombre}</Text>
+                <Text style={GlobalStyles.textoResumenPrecio}>$ {articulosData[(idArticulo)-1].Precio}</Text>
             </View>
-        )
+          )
+        }else if(tipoData == "U"){
+          total = total + pedido.Total
+          return(
+              <View style={GlobalStyles.viewPagarResumen} key={pedido.ID_Pedido}>
+                  <Text style={GlobalStyles.textoResumenNombre}>{articulosData[(pedido.Id_articulo)-1].Nombre}</Text>
+                  <Text style={GlobalStyles.textoResumenPrecio}>$ {pedido.Total}</Text>
+              </View>
+          )
+        }
     })
 
     return (
@@ -64,7 +74,7 @@ export default function PayPage({ route, navigation }) {
             <Text style={GlobalStyles.textoResumenPrecio}>$ {total}</Text>
         </View>
         <View style={GlobalStyles.viewPagarResumen}>
-            <Text style={GlobalStyles.textoResumenNombre}>Comisión:</Text>
+            <Text style={GlobalStyles.textoResumenNombre}>Comisión (10%):</Text>
             <Text style={GlobalStyles.textoResumenPrecio}>$ {(total/10)}</Text>
         </View>
         <View style={GlobalStyles.linea}></View>

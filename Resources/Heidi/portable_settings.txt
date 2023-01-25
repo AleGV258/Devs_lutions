@@ -31,7 +31,7 @@ ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,
 ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
 ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
 ColSort_MainForm.ListTables<|||>1<|||>0,0
-MainWinMaximized<|||>3<|||>0
+MainWinMaximized<|||>3<|||>1
 ColWidths_frmTableEditor.listColumns<|||>1<|||>47,100,154,90,60,65,50,117,130,140,100,100
 ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
 ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
@@ -55,8 +55,8 @@ MainWinWidth<|||>3<|||>993
 MainWinHeight<|||>3<|||>525
 SessionManager_WindowLeft<|||>3<|||>112
 SessionManager_WindowTop<|||>3<|||>115
-SQLFile0<|||>1<|||>C:\Users\alegv\OneDrive\Documentos\Escuela\Administración de Proyectos de Software\App\Devs_lutions\Resources\Heidi\Backups\query-tab-2023-01-15_17-30-38-362.sql
 MemoEditorWidth<|||>3<|||>701
+SQLFile0<|||>1<|||>C:\Users\alegv\OneDrive\Documentos\Escuela\Administración de Proyectos de Software\App\Devs_lutions\Resources\Heidi\Backups\query-tab-2023-01-15_17-30-38-362.sql
 Servers\Devs_Lutions\SessionCreated<|||>1<|||>2022-12-21 16:17:37
 Servers\Devs_Lutions\Host<|||>1<|||>pick-up.mysql.database.azure.com
 Servers\Devs_Lutions\WindowsAuth<|||>3<|||>0
@@ -94,9 +94,9 @@ Servers\Devs_Lutions\LogFileDdl<|||>3<|||>0
 Servers\Devs_Lutions\LogFileDml<|||>3<|||>0
 Servers\Devs_Lutions\LogFilePath<|||>1<|||>C:\Users\alegv\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
 Servers\Devs_Lutions\ServerVersionFull<|||>1<|||>5.7.39-log - MySQL Community Server (GPL)
-Servers\Devs_Lutions\ConnectCount<|||>3<|||>7
+Servers\Devs_Lutions\ConnectCount<|||>3<|||>8
 Servers\Devs_Lutions\ServerVersion<|||>3<|||>50739
-Servers\Devs_Lutions\LastConnect<|||>1<|||>2023-01-24 14:43:16
+Servers\Devs_Lutions\LastConnect<|||>1<|||>2023-01-24 22:26:42
 Servers\Devs_Lutions\lastUsedDB<|||>1<|||>devs_lutions
 Servers\Devs_Lutions\QueryHistory\7<|||>1<|||>2023-01-15 17:31:22|devs_lutions|62|SELECT * FROM usuarios;
 Servers\Devs_Lutions\QueryHistory\3<|||>1<|||>2023-01-15 17:33:43|devs_lutions|264|UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/ale.gv258@gmail.com.jpg" WHERE Id_Usuario = 2;<{{{><}}}>UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/charlie51@gmail.com.jpg" WHERE Id_Usuario = 3;<{{{><}}}>UPDATE usuarios SET foto = "https://devslutions.blob.core.windows.net/users-images/leonardo@gmail.com.jpg" WHERE Id_Usuario = 1;
@@ -126,3 +126,4 @@ Servers\Devs_Lutions\QueryHistory\27<|||>1<|||>2023-01-24 15:18:07|devs_lutions|
 Servers\Devs_Lutions\QueryHistory\24<|||>1<|||>2023-01-24 15:21:33|devs_lutions|375|INSERT INTO usuarios(Nombre, Apellidos, Correo, Contrasena, Edad, Genero, Telefono, Pago_Preferido, Foto) VALUES('p', '', 'p', 'p', 0, DEFAULT, DEFAULT, DEFAULT, DEFAULT);<{{{><}}}><{{{><}}}><{{{><}}}>
 Servers\Devs_Lutions\QueryHistory\28<|||>1<|||>2023-01-24 15:35:51|devs_lutions|63|SHOW CREATE TABLE `devs_lutions`.`usuarios`;<{{{><}}}>
 Servers\Devs_Lutions\QueryHistory\26<|||>1<|||>2023-01-24 16:01:12|devs_lutions|62|SELECT * FROM usuarios
+Servers\Devs_Lutions\QueryHistory\29<|||>1<|||>2023-01-24 22:29:48|devs_lutions|78|INSERT INTO usuarios VALUES (6, 'Michell', 'García', 'ale.gv258@gmail.com', '1234', 21, 'Masculino', '+52 4424392997', 'Efectivo', 'https://devslutions.blob.core.windows.net/users-images/ale.gv258@gmail.com.jpg')

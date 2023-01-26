@@ -1,1 +1,1 @@
-UPDATE pedidos SET Id_usuario = 6 WHERE Id_usuario = 1;
+INSERT INTO usuarios VALUES (6, 'Michell', 'García', 'ale.gv258@gmail.com', '1234', 21, 'Masculino', '+52 4424392997', 'Efectivo', 'https://devslutions.blob.core.windows.net/users-images/ale.gv258@gmail.com.jpg')

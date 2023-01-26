@@ -1,7 +1,0 @@
-Integrantes:
-- García Vargas Michell Alejandro - 259663
-- Flores Espinoza Luis Eduardo - 252589
-- Mendieta Robledo Carlos Abraham - 290273
-- Velázquez Campos Leonardo - 250893
-
-Link: https://devs-lutions-api.azurewebsites.net/

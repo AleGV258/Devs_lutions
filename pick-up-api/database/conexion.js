@@ -4,7 +4,7 @@ function conectar() {
     var config =
     {
         host     : 'pick-up.mysql.database.azure.com',
-        user     : 'devs_lutions_admin',
+        user     : '*********',
         password : '*********',
         database : 'devs_lutions',
         port: 3306,
